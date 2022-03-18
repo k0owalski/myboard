@@ -1,17 +1,22 @@
-import React from 'react';
-import { ThemeProvider } from 'styled-components';
+import React, { useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import GlobalStyle from 'theme/GlobalStyle';
-import NavBar from 'components/organisms/NavBar/NavBar';
-import MainTheme from 'theme/MainTheme';
+import MainTemplate from 'templates/MainTemplate';
+import NoBoards from './NoBoards';
 
-const Root = () => (
-  <>
-    <GlobalStyle />
-    <ThemeProvider theme={MainTheme}>
-      <NavBar />
-    </ThemeProvider>
-  </>
-);
+const Root = () => {
+  // eslint-disable-next-line
+  const [boadrs, setBoards] = useState([]);
+
+  return (
+    <MainTemplate>
+      <BrowserRouter>
+        <Routes>
+          <Route exact path="/" element={<NoBoards />} />
+        </Routes>
+      </BrowserRouter>
+    </MainTemplate>
+  );
+};
 
 export default Root;

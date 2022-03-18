@@ -27,6 +27,10 @@ const GlobalStyle = createGlobalStyle`
     }
 
     #root {
+        display: grid;
+        grid-template-columns: 20rem 1fr;
+        grid-template-rows: 100vh;
+
         width: 100vw;
         height: 100vh;
     }

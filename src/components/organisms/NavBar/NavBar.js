@@ -14,9 +14,6 @@ const StyledNavBar = styled.div`
   grid-template-columns: 1fr;
   grid-template-rows: repeat(3, max-content) 1fr repeat(2, max-content);
 
-  width: 20rem;
-  height: 100vh;
-
   padding: 3rem;
 
   background-color: #f4f4f4;
