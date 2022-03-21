@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 import userIcon from 'img/icon_user.webp';
@@ -26,6 +27,10 @@ const StyledUserPanel = styled.div`
     align-items: center;
     gap: 0.5rem;
 
+    text-decoration: none;
+
+    color: inherit;
+
     .username-name {
       font-weight: 600;
 
@@ -36,10 +41,10 @@ const StyledUserPanel = styled.div`
 
 const UserPanel = () => (
   <StyledUserPanel>
-    <button className="username-button" type="button">
+    <NavLink to="/users/me" className="username-button">
       <img src={`${userIcon}`} alt="user icon" width={32} height={32} />
       <span className="username-name">Username</span>
-    </button>
+    </NavLink>
     <div>
       <button className="notifications-button" type="button">
         <img
@@ -49,14 +54,14 @@ const UserPanel = () => (
           height={32}
         />
       </button>
-      <button className="settings-button" type="button">
+      <NavLink to="/settings/global" className="settings-button">
         <img
           src={`${settingsIcon}`}
           alt="settingsIcon icon"
           width={32}
           height={32}
         />
-      </button>
+      </NavLink>
     </div>
   </StyledUserPanel>
 );

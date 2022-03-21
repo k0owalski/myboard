@@ -1,5 +1,7 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
+
 import Separator from 'components/atoms/Separator/Separator';
 
 const StyledBoardList = styled.div`
@@ -10,28 +12,37 @@ const StyledBoardList = styled.div`
   .boardList {
     margin: 1rem 0 0;
 
-    .boardName {
+    .boardLink {
+      display: block;
+
       margin: 0 0 0.5rem;
 
       font-family: inherit;
       font-weight: 300;
 
+      text-decoration: none;
+
+      color: inherit;
       background: none;
 
       border: none;
 
       cursor: pointer;
+
+      &.active {
+        font-weight: 600;
+      }
     }
   }
 `;
 
 const BoardList = () => {
   const boards = [
-    'Algebra z geometrią',
+    'Algebra z geometria',
     'Analiza matematyczna',
     'Angielski C1',
     'Podstawy fizyki dla informatyki',
-    'Wstęp do programowania',
+    'Wstep do programowania',
   ];
 
   return (
@@ -39,14 +50,13 @@ const BoardList = () => {
       <Separator label="Boards" />
       <nav className="boardList">
         {boards.map((board) => (
-          <button
-            onClick={() => null}
-            type="button"
-            className="boardName"
+          <NavLink
+            to={`/boards/${board.toLowerCase().replaceAll(' ', '-')}`}
+            className={`boardLink ${({ isActive }) => isActive ?? 'active'}`}
             key={board}
           >
             {board}
-          </button>
+          </NavLink>
         ))}
       </nav>
     </StyledBoardList>
