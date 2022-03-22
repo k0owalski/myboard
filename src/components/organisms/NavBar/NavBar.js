@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 import Logo from 'components/atoms/Logo/Logo';
 import NavButton from 'components/atoms/NavButton/NavButton';
@@ -25,14 +26,14 @@ const StyledNavBar = styled.div`
   }
 `;
 
-const NavBar = () => (
+const NavBar = ({ boards }) => (
   <StyledNavBar>
     <Logo />
     <NavButton icon={`${enterIcon}`}>Join Board</NavButton>
     <NavButton icon={`${plusIcon}`} alternative>
       Create new board
     </NavButton>
-    <BoardList />
+    <BoardList boards={boards} />
     <UserPanel />
     <footer>
       2022 &copy; myBoard by KKdesign.
@@ -43,3 +44,7 @@ const NavBar = () => (
 );
 
 export default NavBar;
+
+NavBar.propTypes = {
+  boards: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string)).isRequired,
+};

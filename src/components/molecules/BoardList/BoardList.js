@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 import Separator from 'components/atoms/Separator/Separator';
 
@@ -36,31 +37,25 @@ const StyledBoardList = styled.div`
   }
 `;
 
-const BoardList = () => {
-  const boards = [
-    'Algebra z geometria',
-    'Analiza matematyczna',
-    'Angielski C1',
-    'Podstawy fizyki dla informatyki',
-    'Wstep do programowania',
-  ];
-
-  return (
-    <StyledBoardList>
-      <Separator label="Boards" />
-      <nav className="boardList">
-        {boards.map((board) => (
-          <NavLink
-            to={`/boards/${board.toLowerCase().replaceAll(' ', '-')}`}
-            className={`boardLink ${({ isActive }) => isActive ?? 'active'}`}
-            key={board}
-          >
-            {board}
-          </NavLink>
-        ))}
-      </nav>
-    </StyledBoardList>
-  );
-};
+const BoardList = ({ boards }) => (
+  <StyledBoardList>
+    <Separator label="Boards" />
+    <nav className="boardList">
+      {boards.map(({ name }) => (
+        <NavLink
+          to={`/boards/${name.toLowerCase().replaceAll(' ', '-')}`}
+          className={`boardLink ${({ isActive }) => isActive ?? 'active'}`}
+          key={name}
+        >
+          {name}
+        </NavLink>
+      ))}
+    </nav>
+  </StyledBoardList>
+);
 
 export default BoardList;
+
+BoardList.propTypes = {
+  boards: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string)).isRequired,
+};
