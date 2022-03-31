@@ -1,15 +1,8 @@
 import BoardMenuItem from 'components/atoms/BoardMenuItem/BoardMenuItem';
 import React from 'react';
-import styled from 'styled-components';
 
+import StyledBoardMenu from 'components/molecules/BoardMenu/StyledBoardMenu';
 import icon from 'img/icon_chat.webp';
-
-const StyledBoardMenu = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, min-content) 1fr min-content;
-  grid-column: 1 / -1;
-  gap: 4rem;
-`;
 
 const BoardMenu = () => (
   <StyledBoardMenu>
