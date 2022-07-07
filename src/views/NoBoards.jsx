@@ -12,6 +12,8 @@ const StyledNoBoards = styled.main`
   opacity: 0.5;
 
   .noboards-sentence {
+    max-width: 80%;
+
     margin: 1.5rem 0 0.5rem;
 
     font-size: 2rem;
@@ -19,9 +21,10 @@ const StyledNoBoards = styled.main`
   }
 
   .noboards-hint {
-    max-width: 40rem;
+    width: 40rem;
+    max-width: 80%;
 
-    font-size: 1.5rem;
+    font-size: 1.25rem;
 
     text-align: center;
   }

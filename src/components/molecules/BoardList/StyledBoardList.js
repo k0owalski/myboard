@@ -1,14 +1,16 @@
 import styled from 'styled-components';
 
-const StyledBoardList = styled.div`
+const StyledBoardList = styled.nav`
   width: 100%;
 
   margin: 3rem 0 0;
 
-  .boardList {
+  .board-list {
     margin: 1rem 0 0;
 
-    .boardLink {
+    list-style-type: none;
+
+    .board-link {
       display: block;
 
       margin: 0 0 0.5rem;

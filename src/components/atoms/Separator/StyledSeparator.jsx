@@ -9,13 +9,13 @@ const StyledSeparator = styled.div`
   width: 100%;
   height: max-content;
 
-  .separatorLabel {
+  .separator-label {
     font-weight: 300;
 
     color: ${({ theme: { colors } }) => colors.primary};
   }
 
-  .separatorLine {
+  .separator-line {
     margin-block-start: 0;
     margin-block-end: 0;
 

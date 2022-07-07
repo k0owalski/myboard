@@ -5,8 +5,8 @@ import StyledSeparator from 'components/atoms/Separator/StyledSeparator';
 
 const Separator = ({ label }) => (
   <StyledSeparator>
-    <span className="separatorLabel">{label}</span>
-    <hr className="separatorLine" />
+    <span className="separator-label">{label}</span>
+    <hr className="separator-line" />
   </StyledSeparator>
 );
 

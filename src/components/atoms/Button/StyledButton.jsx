@@ -6,10 +6,8 @@ const StyledNavButton = styled.button`
   align-items: center;
   gap: 0.5rem;
 
-  width: 100%;
-  height: 2.5rem;
-
-  margin: 3rem 0 0;
+  width: ${({ width }) => width};
+  height: ${({ height }) => height};
 
   font-family: inherit;
   font-weight: 500;
@@ -26,8 +24,6 @@ const StyledNavButton = styled.button`
   ${({ alternative }) =>
     alternative &&
     css`
-      margin: 1rem 0 0;
-
       color: ${({ theme: { colors } }) => colors.background};
       background-color: ${({ theme: { colors } }) => colors.primary};
     `}
